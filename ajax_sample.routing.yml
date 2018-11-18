@@ -1,0 +1,16 @@
+ajax_sample.content:
+  path: '/ajax'
+  defaults:
+    _controller: '\Drupal\ajax_sample\Controller\AjaxSampleController::content'
+    _title: 'AjaxSample'
+  requirements:
+    _permission: 'access content'
+
+ajax_sample.config:
+  path: '/admin/config/ajax/config'
+  defaults:
+    _form: '\Drupal\ajax_sample\Form\AjaxSampleConfigForm'
+    _title: 'AjaxSample Configuration'
+  requirements:
+    _permission: 'administer site configuration'
+    

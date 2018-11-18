@@ -1,0 +1,7 @@
+ajax_sample.admin:
+  title: 'AjaxSample Configuration'
+  description: 'Configure the AJAX call to be made for demonstration.'
+  parent: system.admin_config_development
+  route_name: ajax_sample.config
+  weight: 100
+  
