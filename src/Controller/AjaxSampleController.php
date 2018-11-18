@@ -45,14 +45,14 @@ class AjaxSampleController {
 #myAlert{
   display: none;
   position: fixed;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
   animation: fadein 0.3s;
   font-family: monospace;
-  z-index: 1;
+  z-index: 999;
 }
 @keyframes fadein{
   0% {opacity: 0;}
@@ -106,7 +106,7 @@ class AjaxSampleController {
   Make AJAX Call
 </button>
 <div id="myAlert">
-  <button onclick="myAlert_close()" id="myAlert_close">
+  <button onclick="$("#myAlert").hide();" id="myAlert_close">
     &times;
   </button>
   <div>
@@ -118,20 +118,10 @@ class AjaxSampleController {
 
 function ajaxSample(){
   url = "' . $config->get('ajax_sample.url') . '";
-  fetch(url)
-  .then(response => response.json())
-  .then(json => myAlert(JSON.stringify(json, null, 2), url));
-}
-
-function myAlert(response, url){
-  document.getElementById("myAlert").style.display = "block";
-  document.getElementById("myAlert_link").href = url;
-  document.getElementById("myAlert_link").innerHTML = url;
-  document.getElementById("myAlert_resp").innerHTML = response;
-}
-
-function myAlert_close(){ 
-  document.getElementById("myAlert").style.display = "none";
+  jQuery("#myAlert_resp").load(url);
+  jQuery("#myAlert").show();
+  jQuery("#myAlert_link").attr("href", url);
+  jQuery("#myAlert_link").html(url);
 }
 
 </script>
