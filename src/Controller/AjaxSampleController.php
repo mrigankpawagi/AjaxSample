@@ -106,7 +106,6 @@ class AjaxSampleController {
   Make AJAX Call
 </button>
 <div id="myAlert">
-  <button onclick="$("#myAlert").hide();" id="myAlert_close">
     &times;
   </button>
   <div>
