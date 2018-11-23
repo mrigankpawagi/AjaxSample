@@ -1,13 +1,13 @@
-ajax_sample.content:
+ajax_sample.main:
   path: '/ajax'
   defaults:
-    _controller: '\Drupal\ajax_sample\Controller\AjaxSampleController::content'
+    _form: '\Drupal\ajax_sample\Form\AjaxSample'
     _title: 'AjaxSample'
   requirements:
     _permission: 'access content'
-
+    
 ajax_sample.config:
-  path: '/admin/config/ajax/config'
+  path: '/ajax/config'
   defaults:
     _form: '\Drupal\ajax_sample\Form\AjaxSampleConfigForm'
     _title: 'AjaxSample Configuration'

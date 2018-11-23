@@ -1,0 +1,12 @@
+ajaxPage:
+  version: 1.x
+  css:
+    base:
+      css/ajaxPage.css: {}
+  js:
+    js/ajaxPage.js: {}
+  dependencies:
+    - core/drupal.ajax
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
