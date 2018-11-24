@@ -27,7 +27,6 @@ function ajax_sample_form_alter(&$form, FormStateInterface $form_state, $ajax_sa
         'article',
       ])
     ) {
-      $form['#attached']['library'][] = 'ajax_sample/ajaxPage';
     }
   }
 }
