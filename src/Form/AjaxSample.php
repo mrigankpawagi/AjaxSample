@@ -11,27 +11,6 @@ use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\CommandInterface;
 
 /**
- * Implements hook_form_alter().
- */
-function ajax_sample_form_alter(&$form, FormStateInterface $form_state, $ajax_sample_config_form) {
-  /* @var Drupal\Core\Entity\FieldableEntityInterface $entity */
-  $formObject = $form_state->getFormObject();
-  if ($formObject instanceof EntityFormInterface) {
-    $entity = $formObject->getEntity();
-    if (
-      $entity->getEntityTypeId() === 'node'
-      && in_array($entity->bundle(), [
-        'organisation',
-        'location',
-        'event',
-        'article',
-      ])
-    ) {
-    }
-  }
-}
-
-/**
  * Custom Command for callback.
  */
 class AjaxSampleCommand implements CommandInterface {
